@@ -13,17 +13,17 @@ const postsSlice = createSlice({
       state.list.push(action.payload)
     },
     deletePost: (state, action) => {
-      state.list = state.list.filter(todo => todo.id !== action.payload)
+      state.list = state.list.filter(post => post.id !== action.payload)
     },
     editPost: (state, action) => {
-      state.list = state.list.map((todo) => {
-        return todo.id === action.payload.id
+      state.list = state.list.map((post) => {
+        return post.id === action.payload.id
           ? {
-            ...todo,
+            ...post,
             title: action.payload.title,
             body: action.payload.body
           }
-          : todo
+          : post
       })
     }
   }
